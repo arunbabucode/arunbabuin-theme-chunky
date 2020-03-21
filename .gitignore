@@ -10,6 +10,8 @@ node_modules/
 *.css.map
 *.sass.map
 *.scss.map
+.DS_Store
+.idea/
 
 # Local Netlify folder
 .netlify

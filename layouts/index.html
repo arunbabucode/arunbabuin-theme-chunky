@@ -2,16 +2,23 @@
 <main class="homepage container py-6">
     <!-- Hero -->
     <div class="hero row">
-        <div class="col position-relative py-lg-7{{ if not .Site.Params.homepageImage }} py-7{{ else }} pb-5{{ end }}">
-            {{- with .Site.Params.homepageImage -}}
-                <div class="homepage-image">
-                    <img src="{{ . | relURL }}" class="img-fluid">
-                </div>
+        <div class="col-lg-6 py-lg-6">
+            <h2 class="display-4 font-weight-bold">Hola!</h2>
+            {{- with .Site.Params.description -}}
+            <h5 class="font-weight-normal">{{ . | safeHTML }}</h5>
             {{- end -}}
 
-            <h1 class="display-4">{{ .Site.Title }}</h1>
-            {{- with .Site.Params.description -}}
-                <h3 class="font-weight-normal">{{ . | safeHTML }}</h3>
+            {{ if  .Site.Params.showAboutMe }}
+                <a href="/about" class="btn btn-primary text-decoration-none" role="button">More about me</a>
+            {{ end }}
+
+        </div>
+
+        <div class="col-lg-6 py-lg-6">
+            {{- with .Site.Params.homepageImage -}}
+            <div class="homepage-image">
+                <img src="{{ . | relURL }}" class="img-fluid">
+            </div>
             {{- end -}}
         </div>
     </div>

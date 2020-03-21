@@ -30,7 +30,7 @@
                     {{- range $name, $path := .Site.Params.social -}}
                         {{- if and $path (not (in (slice "rss" "email") $name)) -}}
                         <li class="list-inline-item">
-                            <a href="{{ $path | safeURL }}" class="icons d-block">
+                            <a href="{{ $path | safeURL }}" class="icons d-block" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-{{ $name }} fa-stack-1x fa-inverse"></i>
@@ -49,9 +49,6 @@
                     {{ end }}
                 </p>
 
-                <p class="text-muted">
-                Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with <a href="https://github.com/puresyntax71/hugo-theme-chunky-poster" target="_blank">Chunky Poster</a>.
-                </p>
             </div>
         </div>
     </div>
